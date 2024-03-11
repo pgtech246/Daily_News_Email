@@ -1,0 +1,1 @@
+A script to gather news from an api news sources and have specified news delivered to your email.
