@@ -12,8 +12,8 @@ topic = 'AI'
 
 url = f"https://newsapi.org/v2/everything?q={topic}&from={ten_days_ago}&sortBy=publishedAt&apiKey={api_key}&language=en"
 
-request = requests.get(url)
-content = request.json()
+response = requests.get(url)
+content = response.json()
 
 body = ""
 for article in content['articles'][:11]:
