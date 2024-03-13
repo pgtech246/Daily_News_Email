@@ -15,10 +15,9 @@ url = f"https://newsapi.org/v2/everything?q={topic}&from={ten_days_ago}&sortBy=p
 response = requests.get(url)
 content = response.json()
 
-body = ""
+body = "Subject: Today's news" + '\n'
 for article in content['articles'][:11]:
-    body = body + "Subject: Today's news" + '\n' + str(article['title']) + '\n' + \
-    str(article['description']) + '\n' + str(article['url']) + 2*'\n'
+    body = body + str(article['title']) + '\n' + str(article['description']) + '\n' + str(article['url']) + 2*'\n'
 
 body = body.encode('utf-8')
 send_email(body)
